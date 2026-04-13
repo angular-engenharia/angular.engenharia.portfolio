@@ -1,0 +1,2219 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/><style>*{box-sizing:border-box;}body{padding:1rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}:root {
+    --green-dark: #1e3a0f;
+    --green-mid: #2d5a1a;
+    --green-lime: #7cbd1f;
+    --green-bright: #9dd62a;
+    --white: #ffffff;
+    --off-white: #f4f6f0;
+    --gray-light: #e8ece2;
+    --gray-text: #4a4a4a;
+    --gray-soft: #888;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--off-white);
+    color: var(--gray-text);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 640px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    overflow: hidden;
+    padding: 0 0 60px 60px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('index_mockup_responsivo_mobile_assets/img_01_a98714bc65b0.webp');
+    background-size: cover;
+    background-position: center center;
+    filter: brightness(0.58) contrast(0.98);
+    transform: scale(1.02);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(8,16,6,0.72) 0%, rgba(8,16,6,0.42) 38%, rgba(8,16,6,0.22) 100%),
+      linear-gradient(to top, rgba(8,16,6,0.82) 0%, rgba(8,16,6,0.28) 48%, rgba(8,16,6,0.12) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 1s ease forwards;
+    max-width: 760px;
+    padding: 30px 34px 34px;
+    background: rgba(8,16,6,0.34);
+    border: 1px solid rgba(255,255,255,0.16);
+    border-left: 5px solid var(--green-lime);
+    border-radius: 24px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 24px 54px rgba(0,0,0,0.28);
+  }
+
+  .hero-logo {
+    height: 96px;
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 16px;
+    display: block;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    object-fit: contain;
+    filter: drop-shadow(0 14px 26px rgba(0,0,0,0.42));
+  }
+
+  .hero-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 42px;
+    color: var(--white);
+    line-height: 0.96;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.28);
+  }
+
+  .hero-title span {
+    color: var(--green-lime);
+  }
+
+  .hero-subtitle {
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .hero-divider {
+    width: 90px;
+    height: 5px;
+    background: var(--green-lime);
+    border-radius: 2px;
+    margin-bottom: 22px;
+  }
+
+  .hero-desc {
+    font-size: 19px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.92);
+    max-width: 620px;
+    line-height: 1.7;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.22);
+  }
+
+  .hero-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--green-lime), var(--green-bright));
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 80px 40px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--green-lime);
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 58px;
+    color: var(--green-dark);
+    line-height: 1;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .section-line {
+    width: 60px;
+    height: 4px;
+    background: var(--green-lime);
+    border-radius: 2px;
+    margin-bottom: 36px;
+  }
+
+  /* ── ABOUT ── */
+  .about { background: var(--white); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .about-text p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .address-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--off-white);
+    border-left: 4px solid var(--green-lime);
+    padding: 12px 18px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    color: var(--gray-soft);
+    margin-top: 10px;
+  }
+
+  /* ── ABOUT IMAGE ── */
+  .map-container {
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    min-height: 420px;
+    box-shadow: 0 16px 42px rgba(30,58,15,0.18);
+    border: 3px solid rgba(125,189,31,0.92);
+    background: #dfe4db;
+  }
+
+  .map-container img {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+
+  .map-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(14,31,7,0.03) 0%, rgba(14,31,7,0.08) 100%);
+    pointer-events: none;
+  }
+
+  /* ── SERVICES ── */
+.services {
+  background: #f6f6f3;
+  position: relative;
+  overflow: hidden;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 75% at 100% 50%, rgba(125,189,31,0.08) 0%, transparent 62%),
+    radial-gradient(ellipse 35% 45% at 0% 0%, rgba(125,189,31,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.services .container {
+  position: relative;
+  z-index: 1;
+}
+
+  .services .section-title .title-pattern-primary {
+    color: #111111;
+  }
+
+  .services .service-title .title-pattern-primary,
+  .services .info-card-title .title-pattern-primary {
+    color: var(--white);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .service-card {
+    position: relative;
+    background:
+      radial-gradient(circle at top right, rgba(125,189,31,0.18) 0, rgba(125,189,31,0.18) 48px, transparent 49px),
+      radial-gradient(ellipse 120% 100% at 100% 50%, rgba(125,189,31,0.14) 0%, transparent 62%),
+      linear-gradient(135deg, #173b08 0%, #214c0e 55%, #2a5d12 100%);
+    border-radius: 18px;
+    padding: 34px 30px;
+    border: 1px solid rgba(10,25,4,0.26);
+    box-shadow: 0 18px 32px rgba(0,0,0,0.16);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 42px rgba(0,0,0,0.22);
+    border-color: rgba(125,189,31,0.48);
+  }
+
+  .service-icon {
+    width: 62px;
+    height: 62px;
+    background: #173b08;
+    border: 1px solid rgba(125,189,31,0.45);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 22px;
+    box-shadow: 0 10px 18px rgba(0,0,0,0.16);
+  }
+
+  .service-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 25px;
+    color: var(--white);
+    margin-bottom: 14px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .service-desc {
+    font-size: 16px;
+    color: rgba(255,255,255,0.94);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .service-list li {
+    font-size: 15px;
+    color: rgba(255,255,255,0.95);
+    padding-left: 18px;
+    position: relative;
+    line-height: 1.55;
+  }
+
+  .service-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--green-lime);
+    font-weight: 700;
+  }
+
+  .services-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .info-card {
+    position: relative;
+    background:
+      radial-gradient(circle at top right, rgba(125,189,31,0.18) 0, rgba(125,189,31,0.18) 48px, transparent 49px),
+      radial-gradient(ellipse 120% 100% at 100% 50%, rgba(125,189,31,0.14) 0%, transparent 62%),
+      linear-gradient(135deg, #173b08 0%, #214c0e 55%, #2a5d12 100%);
+    border-radius: 18px;
+    padding: 30px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    border: 1px solid rgba(10,25,4,0.26);
+    box-shadow: 0 18px 32px rgba(0,0,0,0.16);
+    overflow: hidden;
+  }
+
+  .info-card-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #173b08;
+    border: 1px solid rgba(125,189,31,0.45);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.16);
+  }
+
+  .info-card-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 24px;
+    color: var(--white);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .info-card-text {
+    font-size: 16px;
+    color: rgba(255,255,255,0.94);
+    line-height: 1.78;
+  }
+
+  /* ── MISSION ── */
+  .mission {
+    background: linear-gradient(180deg, #153606 0%, #0f2805 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mission::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 50% 80% at 90% 50%, rgba(125,189,31,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 35% 45% at 0% 100%, rgba(125,189,31,0.10) 0%, transparent 58%);
+  }
+
+  .mission .section-title { color: var(--white); }
+
+  .mvv-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mvv-card {
+    background: #ffffff;
+    border: 1px solid rgba(125,189,31,0.42);
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 18px 32px rgba(0,0,0,0.16);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .mvv-card:hover {
+    background: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 22px 38px rgba(0,0,0,0.18);
+  }
+
+  .mvv-tag {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--green-lime);
+    background: rgba(125,189,31,0.15);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .mvv-icon { font-size: 42px; margin-bottom: 18px; display: block; }
+
+  .mvv-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+    color: var(--white);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .mvv-text { font-size: 16px; color: #2e2e2e; line-height: 1.82; }
+
+  /* ── WHY ── */
+  .why { background: var(--white); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 50px;
+  }
+
+  .why-item {
+    display: flex;
+    gap: 20px;
+    padding: 28px;
+    background: var(--off-white);
+    border-radius: 12px;
+    border-left: 5px solid var(--green-lime);
+    transition: transform 0.2s;
+  }
+
+  .why-item:hover { transform: translateX(4px); }
+
+  .why-num {
+    font-family: 'Anton', sans-serif;
+    font-size: 52px;
+    color: var(--green-lime);
+    line-height: 1;
+    flex-shrink: 0;
+    opacity: 0.4;
+  }
+
+  .why-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    color: var(--green-dark);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .why-text { font-size: 14px; color: #666; line-height: 1.65; }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .stat-card {
+    background: var(--green-dark);
+    border-radius: 16px;
+    padding: 36px 28px;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(125,189,31,0.15);
+  }
+
+  .stat-num {
+    font-family: 'Anton', sans-serif;
+    font-size: 68px;
+    color: var(--green-lime);
+    line-height: 1;
+    display: block;
+    letter-spacing: 2px;
+  }
+
+  .stat-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    margin-top: 8px;
+    display: block;
+  }
+
+  .stat-desc { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 6px; }
+
+  /* ── OBRAS (ex-Cases) ── */
+  .obras { background: var(--off-white); }
+
+  .obras-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 60px;
+  }
+
+  .obra-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--gray-light);
+    transition: box-shadow 0.3s;
+  }
+
+  .obra-card:hover { box-shadow: 0 16px 40px rgba(30,58,15,0.10); }
+
+  .obra-header {
+    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .obra-header::before {
+    content: '';
+    position: absolute;
+    top: -20px; right: -20px;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: rgba(125,189,31,0.2);
+  }
+
+  .obra-client {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green-lime);
+    margin-bottom: 8px;
+  }
+
+  .obra-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 0 10px;
+  }
+
+  .obra-location { font-size: 13px; color: rgba(255,255,255,0.55); }
+
+  .obra-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--gray-light);
+  }
+
+  .obra-photo-placeholder {
+    height: 100px;
+    background: linear-gradient(135deg, var(--gray-light), #dde3d4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+  }
+
+  .obra-title .title-pattern-primary,
+  .obra-title .title-pattern-accent,
+  .obra-title .title-pattern-solo {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  .obra-title .title-pattern-primary {
+    color: var(--white);
+  }
+
+  .obra-title .title-pattern-accent {
+    color: var(--green-bright);
+  }
+
+  .obra-photos-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--gray-light);
+  }
+
+  .obra-photos-gallery > .obra-photo:last-child:nth-child(3n+1) {
+    grid-column: 1 / -1;
+  }
+
+  .obra-photos-gallery > .obra-photo:last-child:nth-child(3n+2) {
+    grid-column: span 2;
+  }
+
+  .obra-photo {
+    min-height: 155px;
+    aspect-ratio: 1 / 0.9;
+    background: #e7ece0;
+    overflow: hidden;
+  }
+
+  .obra-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .clients-title {
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--gray-light);
+  }
+
+  .clients-title .title-pattern-primary,
+  .clients-title .title-pattern-accent {
+    display: block;
+    line-height: 0.95;
+  }
+
+  .clients-title .title-pattern-primary {
+    font-size: clamp(30px, 3.1vw, 42px);
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+
+  .clients-title .title-pattern-accent {
+    font-size: clamp(50px, 5.1vw, 74px);
+  }
+
+  .clients-logos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .client-logo-card {
+    background: var(--white);
+    border: 1px solid #d9ded1;
+    border-radius: 14px;
+    min-height: 108px;
+    padding: 18px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 22px rgba(30,58,15,0.05);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .client-logo-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--green-lime);
+    box-shadow: 0 12px 28px rgba(30,58,15,0.10);
+  }
+
+
+  .client-logo-image {
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    max-height: 76px;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto;
+    mix-blend-mode: normal;
+  }
+
+  .client-logo-card.logo-tall .client-logo-image {
+    max-height: 92px;
+  }
+
+  .client-logo-card.logo-brf-card { min-height: 112px; }
+  .client-logo-card .client-logo-image { image-rendering: -webkit-optimize-contrast; }
+
+  .logo-bunge-img { max-width: 180px; }
+  .logo-castrolanda-img { max-width: 185px; max-height: 70px; width: auto; height: auto; display: block; margin: 0 auto; }
+  .logo-uniteelcom-img { max-width: 180px; max-height: 52px; width: auto; height: auto; display: block; margin: 0 auto; }
+  .logo-frisia-img { max-width: 160px; }
+  .logo-brf-img { max-width: 195px; max-height: 72px; width: auto; }
+  .logo-makita-img { max-width: 170px; max-height: 62px; width: auto; height: auto; display: block; margin: 0 auto; }
+  .logo-smb-img { max-width: 190px; }
+  .logo-cocacola-img { max-width: 220px; }
+  .logo-cargill-img { max-width: 210px; }
+  .logo-jbs-img { max-width: 150px; }
+  .logo-allnex-img { max-width: 220px; }
+  .logo-arb-img { max-width: 150px; }
+  .logo-scala-img { max-width: 190px; }
+
+
+  .client-logo-wordmark {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #18230e;
+    line-height: 1;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .client-logo-wordmark .main {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .client-logo-wordmark .sub {
+    display: block;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  .logo-bunge {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 38px;
+    letter-spacing: 1px;
+    color: #1b4f9b;
+  }
+
+  .logo-castrolanda {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #2d5a1a;
+  }
+
+  .logo-uniteelcom {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+
+  .logo-uniteelcom .accent,
+  .logo-frisia .accent,
+  .logo-cargill .accent,
+  .logo-jbs .accent,
+  .logo-scala .accent {
+    color: var(--green-lime);
+  }
+
+  .logo-frisia {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+  }
+
+  .logo-brf {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    color: #1e5fa8;
+    letter-spacing: 2px;
+  }
+
+  .logo-makita {
+    font-family: 'Anton', sans-serif;
+    font-size: 34px;
+    letter-spacing: 1px;
+    color: #c3171b;
+  }
+
+  .logo-smb {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 33px;
+  }
+
+  .logo-smb .sub {
+    color: var(--green-lime);
+    margin-top: 4px;
+  }
+
+  .logo-cocacola {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.1;
+    color: #b01619;
+  }
+
+  .logo-cocacola .sub {
+    color: #18230e;
+    letter-spacing: 1.4px;
+  }
+
+  .logo-cargill {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 31px;
+    color: #174b95;
+  }
+
+  .logo-jbs {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 38px;
+    color: #cf1e2e;
+    letter-spacing: 1px;
+  }
+
+  .logo-allnex {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 800;
+    font-size: 31px;
+    color: #34495e;
+    text-transform: lowercase;
+  }
+
+  .logo-arb {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+
+  .logo-scala {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 800;
+    font-size: 31px;
+    letter-spacing: 1px;
+    color: #4a3124;
+  }
+
+  @media (max-width: 980px) {
+    .clients-logos {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .clients-logos {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .client-logo-card {
+      min-height: 82px;
+      padding: 16px 14px;
+    }
+
+    .logo-bunge,
+    .logo-brf,
+    .logo-jbs,
+    .logo-arb {
+      font-size: 32px;
+    }
+
+    .logo-castrolanda,
+    .logo-uniteelcom,
+    .logo-frisia,
+    .logo-makita,
+    .logo-smb,
+    .logo-cargill,
+    .logo-allnex,
+    .logo-scala {
+      font-size: 26px;
+    }
+
+    .logo-cocacola {
+      font-size: 19px;
+    }
+  }
+
+  /* ── CONTACT ── */
+  .contact {
+    background: var(--green-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 70% at 10% 50%, rgba(125,189,31,0.1) 0%, transparent 60%);
+  }
+
+  .contact .section-title { color: var(--white); }
+  .contact .section-line { background: var(--green-lime); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-text {
+    font-size: 17px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+
+  .contact-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-location-block {
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) minmax(260px, 320px);
+    gap: 16px;
+    align-items: stretch;
+    max-width: 720px;
+  }
+
+  .contact-address-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-left: 4px solid var(--green-lime);
+    border-radius: 10px;
+    padding: 12px 14px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    min-height: 100%;
+  }
+
+  .contact-address-icon {
+    width: 26px;
+    height: 26px;
+    color: #ff6b7d;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-address-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+
+  .contact-address-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .contact-map-link {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    justify-self: end;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid rgba(157,214,42,0.75);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+  }
+
+  .contact-map-link img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+
+  .phone-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 86px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 18px 22px;
+    color: rgba(255,255,255,0.94);
+    font-size: 15px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+  }
+
+  .contact-item:hover {
+    background: rgba(125,189,31,0.12);
+    border-color: rgba(125,189,31,0.34);
+    transform: translateY(-2px);
+  }
+
+  .contact-item-icon {
+    width: 46px;
+    height: 46px;
+    background: rgba(125,189,31,0.18);
+    border: 1px solid rgba(125,189,31,0.32);
+    color: var(--green-lime);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+
+  .contact-item-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+  }
+
+  .contact-item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    line-height: 1.4;
+  }
+
+  .contact-item-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.48);
+  }
+
+  .contact-item-value {
+    font-size: 17px;
+    color: rgba(255,255,255,0.96);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0d1f07;
+    padding: 18px 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .footer-logo-image {
+    height: 42px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.36);
+    letter-spacing: 1px;
+    text-align: right;
+  }
+  .footer-bar { height: 4px; background: linear-gradient(90deg, var(--green-lime), var(--green-bright)); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    .about-grid, .services-grid, .mvv-grid, .why-grid,
+    .obras-grid, .contact-grid, .stats-row, .services-bottom, .phone-row { grid-template-columns: 1fr; }
+    .section-title { font-size: 42px; }
+    .hero-title { font-size: 36px; }
+    section { padding: 60px 20px; }
+    .hero { padding: 0 16px 40px 16px; }
+    .hero-content { padding: 24px 22px 26px; }
+    .hero-logo { height: 82px; }
+    .hero-desc { font-size: 17px; }
+    .contact-location-block { grid-template-columns: 1fr; max-width: 100%; }
+    .contact-map-link { max-width: 100%; justify-self: stretch; }
+    footer { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .footer-copy { text-align: left; }
+    .map-container, .map-container img { min-height: 300px; }
+    .obra-photos-gallery { grid-template-columns: repeat(2, 1fr); }
+    .obra-photo { height: 130px; }
+  }
+
+
+  /* ── TITLE PATTERN (corrigido) ── */
+  .hero-title,
+  .section-title,
+  .service-title,
+  .info-card-title,
+  .mvv-title,
+  .why-title,
+  .obra-title,
+  .clients-title,
+  .location-card-title,
+  .footer-logo {
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+  }
+
+  .title-pattern-primary,
+  .title-pattern-accent,
+  .title-pattern-solo {
+    display: block;
+    line-height: inherit;
+  }
+
+  .title-pattern-primary {
+    color: #111111;
+  }
+
+  .title-pattern-accent,
+  .title-pattern-solo {
+    color: var(--green-lime);
+  }
+
+  .hero-title .title-pattern-primary,
+  .mission .section-title .title-pattern-primary,
+  .contact .section-title .title-pattern-primary,
+  .contact .location-card-title .title-pattern-primary,
+  .footer-logo .title-pattern-primary {
+    color: var(--white);
+  }
+
+  .mvv-card .mvv-title,
+  .mvv-card .title-pattern-primary {
+    color: #111111;
+  }
+
+  .mvv-card .title-pattern-accent,
+  .mvv-card .title-pattern-solo {
+    color: var(--green-lime);
+  }
+
+
+  .service-card .title-pattern-accent,
+  .info-card .title-pattern-accent {
+    color: var(--green-bright);
+  }
+
+  .service-card .title-pattern-primary,
+  .info-card .title-pattern-primary {
+    color: var(--white);
+  }
+
+  .mvv-card .title-pattern-accent {
+    color: var(--green-lime);
+  }
+
+  .hero .title-pattern-accent {
+    color: var(--green-bright);
+  }
+
+  .hero-title .title-pattern-primary,
+  .hero-title .title-pattern-accent,
+  .hero-title .title-pattern-solo,
+  .section-title .title-pattern-primary,
+  .section-title .title-pattern-accent,
+  .section-title .title-pattern-solo,
+  .service-title .title-pattern-primary,
+  .service-title .title-pattern-accent,
+  .service-title .title-pattern-solo,
+  .info-card-title .title-pattern-primary,
+  .info-card-title .title-pattern-accent,
+  .info-card-title .title-pattern-solo,
+  .mvv-title .title-pattern-primary,
+  .mvv-title .title-pattern-accent,
+  .mvv-title .title-pattern-solo,
+  .why-title .title-pattern-primary,
+  .why-title .title-pattern-accent,
+  .why-title .title-pattern-solo,
+  .obra-title .title-pattern-primary,
+  .obra-title .title-pattern-accent,
+  .obra-title .title-pattern-solo,
+  .clients-title .title-pattern-primary,
+  .clients-title .title-pattern-accent,
+  .clients-title .title-pattern-solo,
+  .location-card-title .title-pattern-primary,
+  .location-card-title .title-pattern-accent,
+  .location-card-title .title-pattern-solo,
+  .footer-logo .title-pattern-primary,
+  .footer-logo .title-pattern-accent,
+  .footer-logo .title-pattern-solo {
+    margin-bottom: 2px;
+  }
+
+
+/* --- ajustes finais v29 --- */
+.hero-title-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 10px;
+}
+.hero-title-row .hero-logo {
+  flex: 0 0 auto;
+  width: 170px;
+  height: auto;
+  max-width: 36%;
+  margin-bottom: 0;
+}
+.hero-title-row .hero-title {
+  margin-bottom: 0;
+}
+.hero-title-row .hero-title span {
+  display: block;
+}
+.contact .section-title.contact-title-inline {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.contact .section-title.contact-title-inline .title-pattern-primary,
+.contact .section-title.contact-title-inline .title-pattern-accent {
+  display: inline-block;
+  margin-bottom: 0;
+  line-height: 0.95;
+}
+.clients-logos .client-logo-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-uniteelcom-img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 170px !important;
+  max-height: 52px !important;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin: 0 auto;
+}
+.logo-makita-img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 175px !important;
+  max-height: 60px !important;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .hero-title-row {
+    align-items: flex-start;
+  }
+}
+@media (max-width: 640px) {
+  .hero-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .hero-title-row .hero-logo {
+    width: 140px;
+    max-width: 60%;
+  }
+  .contact .section-title.contact-title-inline {
+    gap: 8px;
+  }
+}
+
+
+
+/* --- ajustes finais v30 --- */
+.hero-title-row {
+  gap: 24px;
+  align-items: center;
+}
+.hero-title-row .hero-logo {
+  width: 220px !important;
+  max-width: 42% !important;
+}
+.hero-title-row .hero-title {
+  font-size: 38px !important;
+  line-height: 0.95;
+  letter-spacing: 1.5px;
+}
+.contact .section-title.contact-title-inline {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.contact .section-title.contact-title-inline .title-pattern-primary,
+.contact .section-title.contact-title-inline .title-pattern-accent {
+  display: inline-block;
+  margin-bottom: 0;
+  line-height: 0.95;
+}
+.contact .section-title.contact-title-inline .title-pattern-primary {
+  font-size: clamp(54px, 5vw, 82px);
+}
+.contact .section-title.contact-title-inline .title-pattern-accent {
+  font-size: clamp(54px, 5vw, 82px);
+}
+.logo-uniteelcom-img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 175px !important;
+  max-height: 50px !important;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin: 0 auto;
+}
+.logo-makita-img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 190px !important;
+  max-height: 56px !important;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .hero-title-row .hero-logo {
+    width: 180px !important;
+    max-width: 40% !important;
+  }
+  .hero-title-row .hero-title {
+    font-size: 34px !important;
+  }
+  .contact .section-title.contact-title-inline {
+    gap: 12px;
+  }
+}
+@media (max-width: 640px) {
+  .hero-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .hero-title-row .hero-logo {
+    width: 150px !important;
+    max-width: 60% !important;
+  }
+  .hero-title-row .hero-title {
+    font-size: 32px !important;
+  }
+  .contact .section-title.contact-title-inline {
+    flex-wrap: wrap;
+    white-space: normal;
+    gap: 8px;
+  }
+}
+
+  /* v33 override: imagens das obras com tamanho uniforme */
+  .obra-photos-gallery > .obra-photo:last-child:nth-child(3n+1),
+  .obra-photos-gallery > .obra-photo:last-child:nth-child(3n+2) {
+    grid-column: auto !important;
+  }
+
+  .obra-photos-gallery {
+    grid-auto-flow: row;
+    align-items: stretch;
+  }
+
+  .obra-photo {
+    min-height: 170px;
+  }
+
+  /* ── HERO OVERRIDE | modelo aprovado ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 24px 0 0;
+    display: block;
+    color: var(--white);
+    background: #10181d;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+  }
+
+  .hero-bg,
+  .hero-overlay,
+  .hero-bar {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-bg {
+    background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663524445102/cW48YxS8TucJaDqeAieaRM/angular_mockup_industrial_bg_a7229992.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.42;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(110deg, rgba(12,18,22,0.86) 0%, rgba(12,18,22,0.78) 28%, rgba(12,18,22,0.52) 58%, rgba(12,18,22,0.28) 100%);
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    left: -96px;
+    top: 96px;
+    width: 256px;
+    height: 256px;
+    border: 1px solid rgba(157,214,42,0.20);
+    transform: rotate(12deg);
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 34%;
+    height: 128px;
+    background: rgba(157,214,42,0.88);
+    clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .hero-shell {
+    position: relative;
+    z-index: 2;
+    width: min(1280px, calc(100% - 40px));
+    margin: 0 auto;
+    min-height: calc(100vh - 24px);
+    display: grid;
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: 40px;
+    align-items: end;
+    padding: 0 0 40px;
+  }
+
+  .hero-main {
+    min-height: 74vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+    padding-bottom: 12px;
+  }
+
+  .hero-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+  }
+
+  .hero-brand {
+    height: 60px;
+    width: auto;
+  }
+
+  .hero-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .hero-nav a {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: rgba(255,255,255,0.72);
+    text-decoration: none;
+    transition: color 0.25s ease;
+  }
+
+  .hero-nav a:hover {
+    color: var(--white);
+  }
+
+  .hero-content {
+    max-width: 54rem;
+    padding: 32px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(0,0,0,0.18);
+    backdrop-filter: blur(2px);
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border: 1px solid rgba(255,255,255,0.20);
+    background: rgba(255,255,255,0.08);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: rgba(255,255,255,0.72);
+  }
+
+  .hero-kicker::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: var(--green-bright);
+  }
+
+  .hero-grid {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: minmax(0,1fr) 240px;
+    gap: 32px;
+    align-items: end;
+  }
+
+  .hero-title {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(2.45rem, 5.8vw, 5rem);
+    line-height: 0.92;
+    letter-spacing: 0.015em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 18px;
+    text-shadow: none;
+    word-spacing: 0.06em;
+  }
+
+  .hero-title span {
+    display: block;
+    color: var(--green-bright);
+  }
+
+  .hero-desc {
+    max-width: 640px;
+    font-size: 18px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.78);
+    margin: 0;
+  }
+
+  .hero-profile {
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.06);
+    padding: 20px;
+  }
+
+  .hero-profile-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 16px;
+  }
+
+  .hero-profile p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.72);
+    margin: 0;
+  }
+
+  .hero-actions {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .hero-button,
+  .hero-button-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 24px;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    text-decoration: none;
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  }
+
+  .hero-button {
+    background: var(--green-bright);
+    color: #111;
+  }
+
+  .hero-button:hover {
+    transform: translateX(4px);
+  }
+
+  .hero-button-secondary {
+    border: 1px solid rgba(255,255,255,0.16);
+    color: rgba(255,255,255,0.82);
+  }
+
+  .hero-button-secondary:hover {
+    border-color: rgba(255,255,255,0.28);
+    background: rgba(255,255,255,0.06);
+  }
+
+  .hero-scroll {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.30em;
+    color: rgba(255,255,255,0.44);
+  }
+
+  .hero-scroll::before {
+    content: "↓";
+    font-size: 14px;
+    line-height: 1;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .hero-aside {
+    display: grid;
+    gap: 12px;
+    padding: 0 0 12px 24px;
+  }
+
+  .hero-card {
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(0,0,0,0.12);
+    backdrop-filter: blur(4px);
+    transition: background 0.25s ease;
+  }
+
+  .hero-card:hover {
+    background: rgba(0,0,0,0.18);
+  }
+
+  .hero-card-number {
+    font-family: 'Anton', sans-serif;
+    font-size: 42px;
+    line-height: 1;
+    color: var(--green-bright);
+  }
+
+  .hero-card p {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.68);
+  }
+
+  .hero-divider,
+  .hero-subtitle,
+  .hero-title-row,
+  .hero-logo {
+    display: none !important;
+  }
+
+  .hero-bar {
+    display: none;
+  }
+
+  @media (max-width: 1100px) {
+    .hero-shell {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .hero::after {
+      display: none;
+    }
+
+    .hero-aside {
+      padding-left: 0;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 820px) {
+    .hero {
+      padding-top: 18px;
+    }
+
+    .hero-shell {
+      width: min(100% - 28px, 1280px);
+      min-height: auto;
+      padding-bottom: 28px;
+    }
+
+    .hero-main {
+      min-height: auto;
+    }
+
+    .hero-topbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-nav {
+      display: none;
+    }
+
+    .hero-content {
+      padding: 24px 22px 26px;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.7rem, 12vw, 4.6rem);
+    }
+
+    .hero-desc {
+      font-size: 17px;
+    }
+
+    .hero-aside {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .map-container .about-mockup-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+
+
+  /* ── AJUSTE DESKTOP | primeira página inteira na tela ── */
+  @media (min-width: 1024px) {
+    .hero {
+      height: 100vh;
+      min-height: 0;
+      overflow: hidden;
+      padding-top: 16px;
+    }
+
+    .hero-shell {
+      width: min(1220px, calc(100% - 48px));
+      min-height: calc(100vh - 36px);
+      gap: 28px;
+      padding-bottom: 20px;
+    }
+
+    .hero-main {
+      min-height: auto;
+      gap: 20px;
+      justify-content: flex-start;
+      padding-bottom: 0;
+    }
+
+    .hero-topbar {
+      padding-bottom: 16px;
+    }
+
+    .hero-brand {
+      height: 48px;
+    }
+
+    .hero-content {
+      max-width: 50rem;
+      padding: 24px;
+    }
+
+    .hero-grid {
+      margin-top: 20px;
+      grid-template-columns: minmax(0, 1fr) 220px;
+      gap: 24px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 4.5vw, 4.25rem);
+      margin-bottom: 12px;
+    }
+
+    .hero-desc {
+      max-width: 580px;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .hero-profile {
+      padding: 16px;
+    }
+
+    .hero-profile-label {
+      margin-bottom: 12px;
+    }
+
+    .hero-profile p {
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .hero-scroll {
+      font-size: 10px;
+      letter-spacing: 0.24em;
+    }
+
+    .hero::before {
+      top: 72px;
+      width: 220px;
+      height: 220px;
+    }
+
+    .hero::after {
+      width: 31%;
+      height: 100px;
+    }
+  }
+
+
+
+  /* ── RESPONSIVO MOBILE | otimização geral ── */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding: 0;
+    }
+
+    section {
+      padding: 52px 16px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 10vw, 2.9rem);
+      line-height: 0.98;
+      margin-bottom: 14px;
+    }
+
+    .section-line {
+      margin-bottom: 24px;
+    }
+
+    .hero {
+      min-height: auto;
+      padding-top: 12px;
+    }
+
+    .hero-bg {
+      background-position: 62% center;
+    }
+
+    .hero-overlay {
+      background: linear-gradient(180deg, rgba(12,18,22,0.92) 0%, rgba(12,18,22,0.86) 34%, rgba(12,18,22,0.72) 62%, rgba(12,18,22,0.58) 100%);
+    }
+
+    .hero-shell {
+      width: calc(100% - 24px);
+      min-height: auto;
+      gap: 16px;
+      padding-bottom: 18px;
+    }
+
+    .hero-main {
+      gap: 18px;
+    }
+
+    .hero-topbar {
+      padding-bottom: 12px;
+      gap: 12px;
+    }
+
+    .hero-brand {
+      height: 38px;
+      max-width: min(220px, 72vw);
+    }
+
+    .hero-content {
+      max-width: 100%;
+      padding: 18px 16px 18px;
+    }
+
+    .hero-kicker {
+      padding: 10px 12px;
+      gap: 10px;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+    }
+
+    .hero-grid {
+      margin-top: 16px;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 13vw, 3.3rem);
+      line-height: 0.94;
+      margin-bottom: 12px;
+    }
+
+    .hero-desc {
+      max-width: 100%;
+      font-size: 15px;
+      line-height: 1.58;
+    }
+
+    .hero-profile {
+      padding: 16px;
+    }
+
+    .hero-profile-label {
+      margin-bottom: 10px;
+      letter-spacing: 0.2em;
+    }
+
+    .hero-profile p {
+      font-size: 13px;
+      line-height: 1.58;
+    }
+
+    .hero-scroll {
+      display: none;
+    }
+
+    .hero::before {
+      left: -54px;
+      top: 72px;
+      width: 140px;
+      height: 140px;
+    }
+
+    .hero::after {
+      width: 68%;
+      height: 72px;
+      clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .about-grid,
+    .services-grid,
+    .mvv-grid,
+    .why-grid,
+    .obras-grid,
+    .contact-grid,
+    .stats-row,
+    .services-bottom,
+    .phone-row,
+    .contact-location-block {
+      grid-template-columns: 1fr !important;
+      gap: 24px;
+    }
+
+    .about-text p,
+    .service-desc,
+    .mvv-text,
+    .why-text,
+    .contact-text,
+    .location-card p,
+    .info-card p,
+    .contact-card p {
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .service-card,
+    .mvv-card,
+    .why-card,
+    .info-card,
+    .contact-card,
+    .location-card,
+    .hero-profile,
+    .contact-address-card,
+    .client-logo-card {
+      padding: 16px;
+    }
+
+    .address-tag {
+      width: 100%;
+      justify-content: flex-start;
+      padding: 10px 14px;
+      font-size: 12px;
+    }
+
+    .map-container,
+    .map-container img,
+    .map-container .about-mockup-image {
+      min-height: 240px;
+    }
+
+    .stats-row {
+      gap: 12px;
+    }
+
+    .stat-card,
+    .stats-card,
+    .phone-card,
+    .contact-map-link {
+      width: 100%;
+    }
+
+    .obra-photos-gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .obra-photo {
+      min-height: 120px;
+      height: 120px;
+    }
+
+    .clients-logos {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .client-logo-card {
+      min-height: 82px;
+    }
+
+    .contact-location-block {
+      max-width: 100%;
+    }
+
+    .contact-map-link {
+      justify-self: stretch;
+      min-height: 220px;
+    }
+
+    footer {
+      padding: 24px 16px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .footer-copy {
+      text-align: left;
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding-top: 10px;
+    }
+
+    .hero-shell {
+      width: calc(100% - 20px);
+      padding-bottom: 16px;
+    }
+
+    .hero-topbar {
+      padding-bottom: 10px;
+    }
+
+    .hero-brand {
+      height: 34px;
+      max-width: 68vw;
+    }
+
+    .hero-content {
+      padding: 16px 14px;
+    }
+
+    .hero-kicker {
+      width: 100%;
+      justify-content: flex-start;
+      font-size: 9px;
+      letter-spacing: 0.16em;
+    }
+
+    .hero-title {
+      font-size: clamp(1.85rem, 13.5vw, 2.8rem);
+    }
+
+    .hero-desc,
+    .about-text p,
+    .service-desc,
+    .mvv-text,
+    .why-text,
+    .contact-text {
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 10vw, 2.5rem);
+    }
+
+    .section-label {
+      letter-spacing: 0.18em;
+    }
+
+    .hero::before {
+      display: none;
+    }
+
+    .hero::after {
+      width: 78%;
+      height: 60px;
+    }
+
+    .obra-photos-gallery,
+    .clients-logos {
+      grid-template-columns: 1fr;
+    }
+
+    .obra-photo {
+      height: 180px;
+    }
+
+    .contact-address-card,
+    .service-card,
+    .mvv-card,
+    .why-card,
+    .info-card,
+    .contact-card,
+    .location-card,
+    .client-logo-card {
+      padding: 14px;
+    }
+
+    .map-container,
+    .map-container img,
+    .map-container .about-mockup-image,
+    .contact-map-link {
+      min-height: 200px;
+    }
+  }
+
+</style></head><body><meta charset="utf-8" class=""/><meta class="" content="width=device-width, initial-scale=1.0" name="viewport"/><title class="">Angular Engenharia — Portfólio</title><link class="" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Barlow:wght@300;400;500;600;700&amp;family=Barlow+Condensed:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><!-- HERO --><section class="hero"><div class="hero-bg"></div><div class="hero-overlay"></div><div class="hero-shell"><div class="hero-main"><header class="hero-topbar"><img alt="Angular Engenharia" class="hero-brand" src="https://d2xsxph8kpxj0f.cloudfront.net/310519663524445102/cW48YxS8TucJaDqeAieaRM/IMG_9354_2c03f41c.webp"/></header><div class="hero-content"><div class="hero-kicker">Portfólio empresarial</div><div class="hero-grid"><div class=""><h1 class="hero-title">engenharia em<span class="">excelência</span></h1><p class="hero-desc">Empresa especializada em construção civil para os segmentos industrial, comercial e residencial, executando obras em todo o Brasil, incluindo serviços como execuções de bases em concreto armado, pisos, saneamento, pintura industrial, acabamentos em geral, recuperação e reforço estrutural, entre outros serviços civis.</p></div><div class="hero-profile"><div class="hero-profile-label">Perfil</div><p class="">Engenharia industrial, sinalização estratégica, posicionamento institucional e discurso visual preparado para transmitir confiança operacional.</p></div></div></div><div class="hero-scroll">Descer para explorar</div></div></div></section><!-- ABOUT + MAPA --><section class="about"><div class="container"><div class="about-grid"><div class="about-text reveal visible"><div class="section-label">Quem Somos</div><h2 class="section-title"><span class="title-pattern-primary">Quem</span><span class="title-pattern-accent">Somos</span></h2><div class="section-line"></div><p class="">Com sede em Ponta Grossa/PR, a Angular Engenharia é especializada em engenharia estrutural, recuperação de estruturas e soluções sob medida para operações industriais e comerciais de alta exigência.</p><p class="">Atuamos em todo o Brasil com foco em segurança operacional, rigor técnico e governança em cada entrega, transformando desafios de obra em soluções confiáveis que preservam ativos, elevam a performance das operações e geram crescimento sustentável para nossos clientes.</p><div class="address-tag">
+          📍   Rua Euzébio de Matos, 265B — Oficinas, Ponta Grossa-PR
+        </div></div><div class="reveal visible"><div class="map-container"><img alt="Mockup Angular Engenharia em obra" class="about-mockup-image" src="index_mockup_responsivo_mobile_assets/img_02_e6c7a8ac4a4b.webp"/></div></div></div></div></section><!-- SERVICES --><section class="services"><div class="container"><div class="section-label reveal visible">O Que Fazemos</div><h2 class="section-title reveal visible"><span class="title-pattern-primary">Nossos</span><span class="title-pattern-accent">Serviços</span></h2><div class="section-line reveal visible"></div><div class="services-grid"><div class="service-card reveal visible"><div class="service-icon">🏭</div><div class="service-title"><span class="title-pattern-primary">Projetos</span><span class="title-pattern-accent">Industriais</span></div><p class="service-desc">Desenvolvimento de projetos estruturais, arquitetônicos e complementares para plantas industriais de todos os portes.</p><ul class="service-list"><li class="">Galpões industriais</li><li class="">Unidades fabris</li><li class="">Armazéns e centros de distribuição</li></ul></div><div class="service-card reveal visible"><div class="service-icon">🏬</div><div class="service-title"><span class="title-pattern-primary">Empreendimentos</span><span class="title-pattern-accent">Comerciais</span></div><p class="service-desc">Soluções completas para construções comerciais modernas e funcionais que atendem às necessidades do mercado.</p><ul class="service-list"><li class="">Shoppings e centros comerciais</li><li class="">Edifícios corporativos</li><li class="">Lojas e estabelecimentos</li></ul></div><div class="service-card reveal visible"><div class="service-icon">📋</div><div class="service-title"><span class="title-pattern-primary">Gestão de</span><span class="title-pattern-accent">Obras</span></div><p class="service-desc">Acompanhamento técnico completo, garantindo qualidade, prazos e orçamento controlados em todas as etapas.</p><ul class="service-list"><li class="">Planejamento e cronograma</li><li class="">Fiscalização técnica</li><li class="">Controle de qualidade</li></ul></div></div><div class="services-bottom"><div class="info-card reveal visible"><div class="info-card-icon">🗺️</div><div class=""><div class="info-card-title"><span class="title-pattern-primary">Atuação</span><span class="title-pattern-accent">Nacional</span></div><p class="info-card-text">Com sede estratégica em Ponta Grossa/PR, atendemos clientes em todos os estados brasileiros, levando nossa experiência e qualidade para cada canto do país.</p></div></div><div class="info-card reveal visible"><div class="info-card-icon">⚙️</div><div class=""><div class="info-card-title"><span class="title-pattern-primary">Tecnologia e</span><span class="title-pattern-accent">Inovação</span></div><p class="info-card-text">Utilizamos as mais modernas ferramentas de projeto e gestão, incluindo modelagem BIM, para entregar resultados superiores e eficientes.</p></div></div></div></div></section><!-- MISSION --><section class="mission"><div class="container"><div class="section-label reveal visible" style="color:var(--green-lime)">Nossos Princípios</div><h2 class="section-title reveal visible"><span class="title-pattern-primary">Missão, Visão</span><span class="title-pattern-accent">e Valores</span></h2><div class="section-line reveal visible"></div><div class="mvv-grid"><div class="mvv-card reveal visible"><span class="mvv-tag">Missão</span><span class="mvv-icon">🎯</span><div class="mvv-title"><span class="title-pattern-primary">Nossa</span><span class="title-pattern-accent">Missão</span></div><p class="mvv-text">Viabilizar soluções de engenharia de alta performance através de inovação e excelência técnica. Entregar ativos seguros que maximizem a produtividade e acelerem o crescimento estratégico de nossos clientes.</p></div><div class="mvv-card reveal visible"><span class="mvv-tag">Visão</span><span class="mvv-icon">👁️</span><div class="mvv-title"><span class="title-pattern-primary">Nossa</span><span class="title-pattern-accent">Visão</span></div><p class="mvv-text">Ser referência na gestão e execução de obras, ampliando nossa presença de mercado por meio de governança sólida e um compromisso inegociável com a excelência técnica e a qualidade.</p></div><div class="mvv-card reveal visible"><span class="mvv-tag">Valores</span><span class="mvv-icon">🤝</span><div class="mvv-title"><span class="title-pattern-primary">Nossos</span><span class="title-pattern-accent">Valores</span></div><p class="mvv-text">Segurança operacional e rigor técnico são nossos pilares inegociáveis, atuando com honestidade em todas as etapas da governança e no relacionamento com fornecedores e clientes.</p></div></div></div></section><!-- WHY US --><section class="why"><div class="container"><div class="section-label reveal visible">Diferenciais</div><h2 class="section-title reveal visible"><span class="title-pattern-primary">Por Que</span><span class="title-pattern-accent">Escolher a Angular?</span></h2><div class="section-line reveal visible"></div><div class="why-grid"><div class="why-item reveal visible"><div class="why-num">1</div><div class=""><div class="why-title"><span class="title-pattern-primary">Experiência</span><span class="title-pattern-accent">Comprovada</span></div><p class="why-text">Anos de atuação no mercado de engenharia civil, com dezenas de projetos entregues com sucesso em diversos estados brasileiros.</p></div></div><div class="why-item reveal visible"><div class="why-num">2</div><div class=""><div class="why-title"><span class="title-pattern-primary">Compromisso</span><span class="title-pattern-accent">Total</span></div><p class="why-text">Dedicação completa a cada projeto, garantindo entregas dentro do prazo, orçamento e com os mais altos padrões de qualidade.</p></div></div><div class="why-item reveal visible"><div class="why-num">3</div><div class=""><div class="why-title"><span class="title-pattern-primary">Equipe</span><span class="title-pattern-accent">Qualificada</span></div><p class="why-text">Profissionais altamente capacitados e certificados, sempre atualizados com as últimas normas técnicas e tendências do setor.</p></div></div><div class="why-item reveal visible"><div class="why-num">4</div><div class=""><div class="why-title"><span class="title-pattern-primary">Parceria</span><span class="title-pattern-accent">Duradoura</span></div><p class="why-text">Construímos relacionamentos de longo prazo com nossos clientes, oferecendo suporte contínuo e soluções personalizadas.</p></div></div></div><div class="stats-row"><div class="stat-card reveal visible"><span class="stat-num">100%</span><span class="stat-label">Cobertura Nacional</span><p class="stat-desc">Atendimento em todos os estados brasileiros</p></div><div class="stat-card reveal visible"><span class="stat-num">24/7</span><span class="stat-label">Suporte Contínuo</span><p class="stat-desc">Acompanhamento dedicado em todas as fases</p></div><div class="stat-card reveal visible"><span class="stat-num">8+</span><span class="stat-label">Anos de Mercado</span><p class="stat-desc">Experiência consolidada em engenharia civil</p></div></div></div></section><!-- OBRAS EXECUTADAS --><section class="obras"><div class="container"><div class="section-label reveal visible">Algumas</div><h2 class="section-title reveal visible"><span class="title-pattern-primary">Obras</span><span class="title-pattern-accent">Executadas</span></h2><div class="section-line reveal visible"></div><div class="obras-grid"><div class="obra-card reveal visible"><div class="obra-header"><div class="obra-client">Bunge Soja</div><div class="obra-title"><span class="title-pattern-primary">Sala AntiChamas</span><span class="title-pattern-accent">Dataroom</span></div><div class="obra-location">📍 Ponta Grossa — PR</div></div><div class="obra-photos obra-photos-gallery"><div class="obra-photo"><img alt="Obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_03_ad4f38b7773e.webp"/></div><div class="obra-photo"><img alt="Obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_04_b1a7130ff4d6.webp"/></div><div class="obra-photo"><img alt="Obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_05_c4c6f835ab03.webp"/></div><div class="obra-photo"><img alt="Obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_06_043e2dfab15d.webp"/></div><div class="obra-photo"><img alt="Obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_07_021e2b6252df.webp"/></div><div class="obra-photo"><img alt="Obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_08_b94e949e3f7f.webp"/></div></div></div><div class="obra-card reveal visible"><div class="obra-header"><div class="obra-client">Cooperativa Castrolanda</div><div class="obra-title"><span class="title-pattern-primary">Recuperação Viga</span><span class="title-pattern-accent">do Tombador</span></div><div class="obra-location">📍 Piraí do Sul — PR</div></div><div class="obra-photos obra-photos-gallery"><div class="obra-photo"><img alt="Recuperação de viga do tombador - obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_09_070307d422a9.webp"/></div><div class="obra-photo"><img alt="Recuperação de viga do tombador - obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_10_691810deb265.webp"/></div><div class="obra-photo"><img alt="Recuperação de viga do tombador - obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_11_8bd620b7ac55.webp"/></div><div class="obra-photo"><img alt="Recuperação de viga do tombador - obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_12_12413a701014.webp"/></div></div></div><div class="obra-card reveal visible"><div class="obra-header"><div class="obra-client">BRF Foods</div><div class="obra-title"><span class="title-pattern-primary">Reparo em Piso</span><span class="title-pattern-accent">de Concreto</span></div><div class="obra-location">📍 São José dos Pinhais — PR</div></div><div class="obra-photos obra-photos-gallery"><div class="obra-photo"><img alt="Reparo em Piso de Concreto - obra executada pela Angular Engenharia - foto 1" class="" src="index_mockup_responsivo_mobile_assets/img_13_a91211031ad9.webp"/></div><div class="obra-photo"><img alt="Reparo em Piso de Concreto - obra executada pela Angular Engenharia - foto 2" class="" src="index_mockup_responsivo_mobile_assets/img_14_f9d74bb63f74.webp"/></div><div class="obra-photo"><img alt="Reparo em Piso de Concreto - obra executada pela Angular Engenharia - foto 3" class="" src="index_mockup_responsivo_mobile_assets/img_15_441ec1d25b0f.webp"/></div><div class="obra-photo"><img alt="Reparo em Piso de Concreto - obra executada pela Angular Engenharia - foto 4" class="" src="index_mockup_responsivo_mobile_assets/img_16_024957a0d2d8.webp"/></div></div></div><div class="obra-card reveal visible"><div class="obra-header"><div class="obra-client">Cooperativa Castrolanda</div><div class="obra-title"><span class="title-pattern-primary">Instalação</span><span class="title-pattern-accent">Fossa Séptica</span></div><div class="obra-location">📍 Piraí do Sul — PR</div></div><div class="obra-photos obra-photos-gallery"><div class="obra-photo"><img alt="Instalação de Fossa Séptica - obra executada pela Angular Engenharia - foto 1" class="" src="index_mockup_responsivo_mobile_assets/img_17_7cfb71caed7f.webp"/></div><div class="obra-photo"><img alt="Instalação de Fossa Séptica - obra executada pela Angular Engenharia - foto 2" class="" src="index_mockup_responsivo_mobile_assets/img_18_5e1b61de42c1.webp"/></div><div class="obra-photo"><img alt="Instalação de Fossa Séptica - obra executada pela Angular Engenharia - foto 3" class="" src="index_mockup_responsivo_mobile_assets/img_19_9e8c1f6df016.webp"/></div><div class="obra-photo"><img alt="Instalação de Fossa Séptica - obra executada pela Angular Engenharia - foto 4" class="" src="index_mockup_responsivo_mobile_assets/img_20_c971d5ca589c.webp"/></div><div class="obra-photo"><img alt="Instalação de Fossa Séptica - obra executada pela Angular Engenharia - foto 5" class="" src="index_mockup_responsivo_mobile_assets/img_21_9cad951a86ca.webp"/></div></div></div><div class="obra-card reveal visible"><div class="obra-header"><div class="obra-client">SAMU</div><div class="obra-title"><span class="title-pattern-primary">Piso</span><span class="title-pattern-accent">Epóxi</span></div><div class="obra-location">📍 Ponta Grossa — PR</div></div><div class="obra-photos obra-photos-gallery"><div class="obra-photo"><img alt="Obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_22_6f6c2e1c2fb7.webp"/></div><div class="obra-photo"><img alt="Obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_23_1623385814ea.webp"/></div><div class="obra-photo"><img alt="Obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_24_12deeea3c737.webp"/></div></div></div><div class="obra-card reveal visible"><div class="obra-header"><div class="obra-client">Frísia</div><div class="obra-title"><span class="title-pattern-primary">Construção de Piso</span><span class="title-pattern-accent">em Concreto Armado</span></div><div class="obra-location">📍 Carambeí — PR</div></div><div class="obra-photos obra-photos-gallery"><div class="obra-photo"><img alt="Obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_25_88d87afe487e.webp"/></div><div class="obra-photo"><img alt="Obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_26_1c49ae4c33e1.webp"/></div><div class="obra-photo"><img alt="Obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_27_d9a641c58cb2.webp"/></div><div class="obra-photo"><img alt="Obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_28_22dd17c9457c.webp"/></div><div class="obra-photo"><img alt="Obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_29_96aabee9878a.webp"/></div><div class="obra-photo"><img alt="Obra executada pela Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_30_21d54ea04f34.webp"/></div></div></div></div><div class="reveal visible"><div class="clients-title"><span class="title-pattern-primary">Alguns de Nossos</span><span class="title-pattern-accent">Clientes</span></div><div class="clients-logos"><div class="client-logo-card"><img alt="Logo Bunge" class="client-logo-image logo-bunge-img" src="index_mockup_responsivo_mobile_assets/img_31_9063221399bd.webp"/></div><div class="client-logo-card"><img alt="Logo Castrolanda" class="client-logo-image logo-castrolanda-img" decoding="async" src="index_mockup_responsivo_mobile_assets/img_32_753bdeef2185.webp"/></div><div class="client-logo-card"><img alt="Logo Uniteelcom" class="client-logo-image logo-uniteelcom-img" decoding="async" src="index_mockup_responsivo_mobile_assets/img_33_7c53626947df.webp"/></div><div class="client-logo-card"><img alt="Logo Frísia" class="client-logo-image logo-frisia-img" src="index_mockup_responsivo_mobile_assets/img_34_d3eb8fb04f8d.webp"/></div><div class="client-logo-card logo-brf-card"><img alt="Logo BRF" class="client-logo-image logo-brf-img" decoding="async" src="index_mockup_responsivo_mobile_assets/img_35_5c8d4375c72e.webp"/></div><div class="client-logo-card"><img alt="Logo Makita" class="client-logo-image logo-makita-img" decoding="async" src="index_mockup_responsivo_mobile_assets/img_36_f733cede20be.webp"/></div><div class="client-logo-card"><img alt="Logo SMB Gestão em Saúde" class="client-logo-image logo-smb-img" src="index_mockup_responsivo_mobile_assets/img_37_164e02fbf9e8.webp"/></div><div class="client-logo-card logo-tall"><img alt="Logo Coca-Cola FEMSA" class="client-logo-image logo-cocacola-img" src="index_mockup_responsivo_mobile_assets/img_38_07c981129d91.webp"/></div><div class="client-logo-card"><img alt="Logo Cargill" class="client-logo-image logo-cargill-img" src="index_mockup_responsivo_mobile_assets/img_39_d402168cccab.webp"/></div><div class="client-logo-card"><img alt="Logo JBS" class="client-logo-image logo-jbs-img" src="index_mockup_responsivo_mobile_assets/img_40_487a072c266a.webp"/></div><div class="client-logo-card"><img alt="Logo allnex" class="client-logo-image logo-allnex-img" src="index_mockup_responsivo_mobile_assets/img_41_3ebb3b73a4a4.webp"/></div><div class="client-logo-card"><img alt="Logo ARB Engenharia e Construções" class="client-logo-image logo-arb-img" src="index_mockup_responsivo_mobile_assets/img_42_91859f177483.webp"/></div><div class="client-logo-card"><img alt="Logo SCALA Construtora" class="client-logo-image logo-scala-img" src="index_mockup_responsivo_mobile_assets/img_43_1c8c6dadab19.webp"/></div></div></div></div></section><!-- CONTACT --><section class="contact"><div class="container"><div class="contact-grid"><div class="contact-left"><div class="section-label reveal visible">Fale Conosco</div><h2 class="section-title reveal contact-title-inline visible"><span class="title-pattern-primary">Entre em</span><span class="title-pattern-accent">Contato</span></h2><div class="section-line reveal visible"></div><p class="contact-text reveal visible">Estamos prontos para transformar seu projeto em realidade. Nossa equipe está à disposição para entender sua demanda, orientar as melhores soluções técnicas e conduzir cada etapa com segurança, agilidade e excelência.</p><div class="contact-location-block reveal visible"><div class="contact-address-card"><div class="contact-address-icon"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><path class="" d="M12 22s7-7.33 7-12A7 7 0 1 0 5 10c0 4.67 7 12 7 12Zm0-9.5A2.5 2.5 0 1 1 12 7a2.5 2.5 0 0 1 0 5.5Z"></path></svg></div><div class="contact-address-text">Rua Euzébio de Matos, 265B — Oficinas, Ponta Grossa/PR</div></div><a class="contact-map-link" href="https://maps.google.com/?q=Rua%20Euz%C3%A9bio%20de%20Matos%2C%20265B%2C%20Oficinas%2C%20Ponta%20Grossa%2C%20PR" rel="noopener noreferrer" target="_blank"><img alt="Mapa da localização da Angular Engenharia" class="" src="index_mockup_responsivo_mobile_assets/img_44_fd15aaaa9eef.webp"/></a></div></div><div class="contact-info reveal visible"><div class="phone-row"><a class="contact-item" href="https://wa.me/5542999297734" rel="noopener noreferrer" target="_blank"><div class="contact-item-icon"><svg class="" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path class="" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8.1 9.6a16 16 0 0 0 6.3 6.3l1.14-1.13a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"></path></svg></div><div class="contact-item-text"><span class="contact-item-label">WhatsApp</span><span class="contact-item-value">(42) 9 9929-7734</span></div></a><a class="contact-item" href="https://wa.me/5542999162391" rel="noopener noreferrer" target="_blank"><div class="contact-item-icon"><svg class="" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path class="" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8.1 9.6a16 16 0 0 0 6.3 6.3l1.14-1.13a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"></path></svg></div><div class="contact-item-text"><span class="contact-item-label">WhatsApp</span><span class="contact-item-value">(42) 9 9916-2391</span></div></a></div><a class="contact-item" href="mailto:contato@angulareng.com.br"><div class="contact-item-icon"><svg class="" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path class="" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"></path><path class="" d="m22 6-10 7L2 6"></path></svg></div><div class="contact-item-text"><span class="contact-item-label">E-mail</span><span class="contact-item-value">contato@angulareng.com.br</span></div></a><a class="contact-item" href="https://instagram.com/_angularengenharia" target="_blank"><div class="contact-item-icon"><svg class="" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><rect class="" height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path class="" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><path class="" d="M17.5 6.5h.01"></path></svg></div><div class="contact-item-text"><span class="contact-item-label">Instagram</span><span class="contact-item-value">@_angularengenharia</span></div></a></div></div></div></section><!-- FOOTER --><div class="footer-bar"></div><footer class=""><img alt="Angular Engenharia" class="footer-logo-image" src="index_mockup_responsivo_mobile_assets/img_45_5e2d5fd5c584.webp"/><div class="footer-copy">© 2025 Angular Engenharia Ltda. — Ponta Grossa, PR</div></footer><script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script></body></html>
